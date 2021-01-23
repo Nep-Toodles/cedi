@@ -1,9 +1,6 @@
 window.addEventListener("scroll",()=>{
   window.scrollTo(0,0)
 })
-window.onerror = (e)=>{
-  alert("An error have been found : IS your network ok or any internal problems like od device?")
-}
 $(document).ready(() => {
   var AutoCompletationMode = localStorage.getItem("autocomplete") ||localStorage.setItem("autocomplete","true")
   var isBabel = localStorage.getItem("isBabel") || localStorage.setItem("isBabel","type='module'")
@@ -185,13 +182,13 @@ $(document).ready(() => {
   editorj.setReadOnly(false)
   editorh.focus()
   let mode = "html"
-  if (localStorage.getItem("html").trim != "" || localStorage.getItem("html") != undefined) {
+  if (localStorage.getItem("html").trim() != "" || localStorage.getItem("html") != undefined) {
     editorh.setValue(localStorage.getItem("html"), -1)
   }
-  if (localStorage.getItem("css").trim != "" || localStorage.getItem("css") != undefined) {
+  if (localStorage.getItem("css").trim() != "" || localStorage.getItem("css") != undefined) {
     editorc.setValue(localStorage.getItem("css"), -1)
   }
-  if (localStorage.getItem("js").trim != "" || localStorage.getItem("js") != undefined) {
+  if (localStorage.getItem("js").trim() != "" || localStorage.getItem("js") != undefined) {
     editorj.setValue(localStorage.getItem("js"), -1)
   }
   var html = localStorage.getItem("html") ? localStorage.getItem("html") : localStorage.setItem("html", "")
