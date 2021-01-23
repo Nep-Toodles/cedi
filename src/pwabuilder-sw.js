@@ -48,17 +48,16 @@ const staticDevCoffee = "pwa-wroker"
 const assets = [
   "/",
   "/src/",
-  "/src/index.html",
-  "/src/logo.png",
-  "/src/style.css",
-  "/src/main.js",
+  "index.html",
+  "logo.png",
+  "style.css",
+  "main.js",
   "run/index.html",
-  "/src/mainifest.json",
+  "mainifest.json",
   "notify.min.js",
   "logo2.png",
-  "/src/filesaver.js",
-  "/src/README.md",
-  "/index.js"
+  "filesaver.js",
+  "README.md",
 ]
 
 self.addEventListener("install", installEvent => {
