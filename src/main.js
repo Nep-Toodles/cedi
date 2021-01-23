@@ -2,6 +2,9 @@ window.addEventListener("scroll",()=>{
   window.scrollTo(0,0)
 })
 $(document).ready(() => {
+  var html = localStorage.getItem("html") ? localStorage.getItem("html") : localStorage.setItem("html",``)
+  var css = localStorage.getItem("css") ? localStorage.getItem("css") : localStorage.setItem("css",``)
+  var js = localStorage.getItem("js") ? localStorage.getItem("js") : localStorage.setItem("js",``)
   var AutoCompletationMode = localStorage.getItem("autocomplete") ||localStorage.setItem("autocomplete","true")
   var isBabel = localStorage.getItem("isBabel") || localStorage.setItem("isBabel","type='module'")
   var useSass = localStorage.getItem("useSass") || localStorage.setItem("useSass",``)
