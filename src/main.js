@@ -446,3 +446,6 @@ window.addEventListener('beforeinstallprompt', (e) => {
       });
   });
 });
+setTimeout(()=>{
+  addBtn.style.display = "none"
+},1500)
