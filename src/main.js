@@ -254,7 +254,7 @@ $(document).ready(() => {
   runButton.className = "material-icons btn right grey darken-2 waves-effect"
   runButton.innerText = "play_arrow"
   runButton.onclick = ()=>{
-    window.open("https://cedi.cret.repl.co/run")
+    window.open(location.href+"/run")
   }
   runButton.title = "Run this project"
   $("#info").append(runButton)
