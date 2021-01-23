@@ -5,6 +5,9 @@ window.addEventListener('appinstalled', (e) => {
   $.notify("Sucessfully installed!!!","Success")
 });
 $(document).ready(() => {
+  ("#cswindow").click(()=>{
+    window.open('https://cedi.vercel.app/run','_blank','width:400,height=100,toolbar=no,menubar=no,titlebar=no')
+  })
   var html = localStorage.getItem("html") ? localStorage.getItem("html") : localStorage.setItem("html",``)
   var css = localStorage.getItem("css") ? localStorage.getItem("css") : localStorage.setItem("css",``)
   var js = localStorage.getItem("js") ? localStorage.getItem("js") : localStorage.setItem("js",``)
