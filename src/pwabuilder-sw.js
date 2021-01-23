@@ -47,17 +47,22 @@ self.addEventListener('fetch', (event) => {
 const staticDevCoffee = "pwa-wroker"
 const assets = [
   "/",
-  "/src/",
-  "index.html",
-  "logo.png",
-  "style.css",
-  "main.js",
-  "run/index.html",
-  "mainifest.json",
-  "notify.min.js",
-  "logo2.png",
   "filesaver.js",
-  "README.md",
+  "../filesaver.js",
+  "./",
+  "../",
+  "*",
+  "./src/",
+  "./index.html",
+  "./logo.png",
+  "./style.css",
+  "./main.js",
+  "./run/index.html",
+  "./mainifest.json",
+  "./notify.min.js",
+  "./logo2.png",
+  "./filesaver.js",
+  "./README.md",
 ]
 
 self.addEventListener("install", installEvent => {
@@ -67,3 +72,14 @@ self.addEventListener("install", installEvent => {
     })
   )
 })
+self.addEventListener('activate', (e) => {
+  e.waitUntil(
+    caches.keys().then((keyList) => {
+          return Promise.all(keyList.map((key) => {
+        if(key !== cacheName) {
+          return caches.delete(key);
+        }
+      }));
+    })
+  );
+});
