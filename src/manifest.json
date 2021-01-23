@@ -2,28 +2,26 @@
   "dir": "ltr",
   "lang": "en",
   "name": "cedi Editor",
-  "short_name": "cedi Editor",
+  "short_name": "< cedi >",
   "scope": "/",
-  "display": "standalone",
-  "start_url": "https://cedi.vercel.app/",
+  "display": "fullscreen",
+  "start_url": "index.html",
   "background_color": "#000000",
   "theme_color": "#222831",
   "description": "",
   "orientation": "any",
-  "related_applications": [],
-  "prefer_related_applications": "false",
   "icons": [
     {
       "src": "logo.png",
       "type": "image/png",
       "sizes": "1366x606",
-      "purpose": "maskable"
+      "purpose": "any"
     },
     {
       "src": "logo2.png",
       "type": "image/png",
       "sizes": "144x144",
-      "purpose": "maskable"
+      "purpose": "any"
     }
   ],
   "url": "https://cedi.vercel.app/",

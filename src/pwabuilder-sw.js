@@ -55,7 +55,11 @@ const assets = [
   "mainifest.json",
   "notify.min.js",
   "logo2.png",
-  "filesaver.js"
+  "filesaver.js",
+  "README.md",
+  "pwabuilder-sw.js",
+  "pwabuilder-sw-register.js",
+  "/index.js"
 ]
 
 self.addEventListener("install", installEvent => {
