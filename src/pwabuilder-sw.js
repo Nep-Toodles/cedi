@@ -47,18 +47,18 @@ self.addEventListener('fetch', (event) => {
 const staticDevCoffee = "pwa-wroker"
 const assets = [
   "/",
-  "index.html",
-  "logo.png",
-  "style.css",
-  "main.js",
+  "/src/index.html",
+  "/src/logo.png",
+  "/src/style.css",
+  "/src/main.js",
   "run/index.html",
-  "mainifest.json",
+  "/src/mainifest.json",
   "notify.min.js",
   "logo2.png",
-  "filesaver.js",
+  "/src/filesaver.js",
   "README.md",
-  "pwabuilder-sw.js",
-  "pwabuilder-sw-register.js",
+  "/src/pwabuilder-sw.js",
+  "/src/pwabuilder-sw-register.js",
   "/index.js"
 ]
 
