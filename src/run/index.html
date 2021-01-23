@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.7/sass.sync.min.js"></script>
+  <script src="https://rawgit.com/Microsoft/TypeScript/master/lib/typescriptServices.js"></script>
+  <script src="https://rawgit.com/basarat/typescript-script/master/transpiler.js"></script>
+  <script ansyc crossorigin defer src="https://cdn.jsdelivr.net/npm/less@3.9.0/dist/less.min.js" ></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<script>
+    window.onload = ()=>{
+    if(localStorage.getItem("usets")!=""){
+      var ts = "type='text/typescript'"
+    }
+    if(localStorage.getItem("useSass") == `<script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.12/sass.sync.min.js" ansyc defer crossorigin='anonymous'></scrip`+`t>`){
+      var scass = "type='sass'"
+      Sass.compile(localStorage.getItem("css"),function(res){
+      var s=document.createElement("style");
+      s.innerHTML=res.text;
+      res.formatted&&console.error(res.formatted);
+      res.text&&document.head.appendChild(s);
+      })
+    }else if(localStorage.getItem("useSass") == `<script ansyc crossorigin defer src="https://cdn.jsdelivr.net/npm/less@3.9.0/dist/less.min.js" ></scrip`+"t>"){
+      var scass = "type='less'"
+      less.render(localStorage.getItem("css"))
+    .then(output => {
+        let css = document.createElement("style");
+        css.innerText = output.css;
+        document.querySelector("head").appendChild(css);
+    })
+    .catch(err => {
+        console.log(JSON.stringify(err))
+    })
+    }else{
+      var scass = "type='text/css'"
+    }
+    
+    let ww = window.open("","_top")
+    ww.document.open()
+    ww.document.write(localStorage.getItem("html")+"<style "+scass+">"+localStorage.getItem("css")+"</style>"+"<script ansyc  crossorigin='anonymous'"+localStorage.getItem("isBabel")+">"+localStorage.getItem("js")+"</"+"scri" + "pt>"+localStorage.getItem("useBabel")+localStorage.getItem("useSass"))
+    ww.document.close()
+    }
+	</script>
+</body>
+
+</html>

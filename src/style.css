@@ -1,25 +1,29 @@
 #editorh {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 89.2%;
     font-size: 120%;
 }
 #editorc{
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 89.2%;
     font-size: 120%;
 }
 #editorj {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 89.2%;
     font-size: 120%;
 }
+#header{
+  user-select: none;
+}
+::-webkit-scrollbar {
+    display: none;
+}
 body{
-  user-zoom: none;
   margin: 0;
-  overflow: hidden;
   padding: 0;
 }
 #info{
