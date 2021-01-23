@@ -449,4 +449,4 @@ window.addEventListener('beforeinstallprompt', (e) => {
 setTimeout(()=>{
   show = 'none'
   addBtn.style.display = "none"
-},1500)
+},7500)
