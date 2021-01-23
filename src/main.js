@@ -420,7 +420,7 @@ function preventBehavior(e) {
 };
 document.addEventListener("touchmove", preventBehavior, { passive: false });
 window.oncontextmenu = (e) => e.preventDefault()
-
+let show = 'block'
 let deferredPrompt;
 const addBtn = document.querySelector('.add-button');
 addBtn.style.display = 'none';
@@ -430,7 +430,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
   // Stash the event so it can be triggered later.
   deferredPrompt = e;
   // Update UI to notify the user they can add to home screen
-  addBtn.style.display = 'block';
+  addBtn.style.display = showw;
 
   addBtn.addEventListener('click', (e) => {
     addBtn.style.display = 'none';
@@ -447,5 +447,6 @@ window.addEventListener('beforeinstallprompt', (e) => {
   });
 });
 setTimeout(()=>{
+  show = 'none'
   addBtn.style.display = "none"
 },1500)
