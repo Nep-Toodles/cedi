@@ -13,9 +13,6 @@
 <body>
 	<script>
     window.onload = ()=>{
-    if(localStorage.getItem("usets")!=""){
-      var ts = "type='text/typescript'"
-    }
     if(localStorage.getItem("useSass") == `<script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.12/sass.sync.min.js" ansyc defer crossorigin='anonymous'></scrip`+`t>`){
       var scass = "type='sass'"
       Sass.compile(localStorage.getItem("css"),function(res){
