@@ -402,7 +402,7 @@ $(document).ready(() => {
         localStorage.setItem("useBabel", `<script ansyc defer crossorigin src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>`)
         editorj.session.setMode("ace/mode/javascript")
         $.notify("AngularJS Uninstalled Sucessfully", "error")
-        $.notify("Installed VueJS sucessfully")
+        $.notify("Installed VueJS sucessfully","success")
         if (localStorage.getItem("useSass") != "") {
           $("#css").text("style.sass [SASS Preprocessor]")
         }
