@@ -5,7 +5,7 @@
   "short_name": "< cedi >",
   "scope": "/",
   "display": "fullscreen",
-  "start_url": "index.html",
+  "start_url": "/",
   "background_color": "#000000",
   "theme_color": "#40453c",
   "description": "",
