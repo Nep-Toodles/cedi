@@ -385,6 +385,7 @@ $(document).ready(() => {
         if (localStorage.getItem("useSass") != "") {
           $("#css").text("style.sass [SASS Preprocessor]")
         }
+      }
       } else if (localStorage.getItem("isBabel") == "type='text/babel'") {
         $("#js").text("main.js")
         $("#html").text("index.html")
