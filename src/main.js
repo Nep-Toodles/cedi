@@ -1,52 +1,52 @@
-window.addEventListener("scroll",()=>{
-  window.scrollTo(0,0)
+window.addEventListener("scroll", () => {
+  window.scrollTo(0, 0)
 })
 window.addEventListener('appinstalled', (e) => {
-  $.notify("Sucessfully installed!!!","Success")
+  $.notify("Sucessfully installed!!!", "Success")
 });
 $(document).ready(() => {
-  $("#cswindow").click(()=>{
-    window.open(location.href+'/run','_blank','width:400,height=100,toolbar=no,menubar=no,titlebar=no')
+  $("#cswindow").click(() => {
+    window.open(location.href + '/run', '_blank', 'width:400,height=100,toolbar=no,menubar=no,titlebar=no')
   })
-  var html = localStorage.getItem("html") ? localStorage.getItem("html") : localStorage.setItem("html",``)
-  var css = localStorage.getItem("css") ? localStorage.getItem("css") : localStorage.setItem("css",``)
-  var js = localStorage.getItem("js") ? localStorage.getItem("js") : localStorage.setItem("js",``)
-  var AutoCompletationMode = localStorage.getItem("autocomplete") ||localStorage.setItem("autocomplete","true")
-  var isBabel = localStorage.getItem("isBabel") || localStorage.setItem("isBabel","type='module'")
-  var useSass = localStorage.getItem("useSass") || localStorage.setItem("useSass",``)
-  var useBabel = localStorage.getItem("useBabel") ?localStorage.getItem("useBabel") : localStorage.setItem("useBabel",``)
-  var useAngular = localStorage.getItem("useangular") ?localStorage.getItem("useangular") : localStorage.setItem("useangular",``)
+  var html = localStorage.getItem("html") ? localStorage.getItem("html") : localStorage.setItem("html", ``)
+  var css = localStorage.getItem("css") ? localStorage.getItem("css") : localStorage.setItem("css", ``)
+  var js = localStorage.getItem("js") ? localStorage.getItem("js") : localStorage.setItem("js", ``)
+  var AutoCompletationMode = localStorage.getItem("autocomplete") || localStorage.setItem("autocomplete", "true")
+  var isBabel = localStorage.getItem("isBabel") || localStorage.setItem("isBabel", "type='module'")
+  var useSass = localStorage.getItem("useSass") || localStorage.setItem("useSass", ``)
+  var useBabel = localStorage.getItem("useBabel") ? localStorage.getItem("useBabel") : localStorage.setItem("useBabel", ``)
+  var useAngular = localStorage.getItem("useangular") ? localStorage.getItem("useangular") : localStorage.setItem("useangular", ``)
   $("#info").sortable()
   $("#settingsDialog").dialog({
-      autoOpen: false,
-      minWidth:window.innerWidth/1.5,
-      minHeight: window.innerHeight/2,
-      width: window.innerWidth/1.5,
-      modal: true,
-      height: window.innerHeight/2,
-      show: {
-        effect: "shake",
-        duration: 700
-      },
-      hide: {
-        effect: "blind",
-        duration: 100
-      }
-    })
-  $("#settingsMenu").click(()=>{
+    autoOpen: false,
+    minWidth: window.innerWidth / 1.5,
+    minHeight: window.innerHeight / 2,
+    width: window.innerWidth / 1.5,
+    modal: true,
+    height: window.innerHeight / 2,
+    show: {
+      effect: "shake",
+      duration: 700
+    },
+    hide: {
+      effect: "blind",
+      duration: 100
+    }
+  })
+  $("#settingsMenu").click(() => {
     $("#settingsDialog").dialog("open")
   })
   $("#header").sortable()
-  keyboardJS.bind("ctrl +r",(e)=>{
+  keyboardJS.bind("ctrl +r", (e) => {
     e.preventDefault()
   })
-  keyboardJS.bind("ctrl + shift +f",(e)=>{
+  keyboardJS.bind("ctrl + shift +f", (e) => {
     format()
   })
-  keyboardJS.bind("shift + alt + f",(e)=>{
+  keyboardJS.bind("shift + alt + f", (e) => {
     format()
   })
-  keyboardJS.bind("alt + f",(e)=>{
+  keyboardJS.bind("alt + f", (e) => {
     e.preventDefault()
     format()
   })
@@ -69,11 +69,11 @@ $(document).ready(() => {
   let editorj = ace.edit("editorj")
   editorj.session.setMode("ace/mode/javascript")
   editorj.setTheme("ace/theme/twilight")
-  $("#autoCompletation").click(()=>{
+  $("#autoCompletation").click(() => {
     $("#autoCompletation").toggleClass("red")
-    if(localStorage.getItem("autocomplete") == "false"){
-      $.notify("Enabled autoCompletation","success")
-      localStorage.setItem("autocomplete","true")
+    if (localStorage.getItem("autocomplete") == "false") {
+      $.notify("Enabled autoCompletation", "success")
+      localStorage.setItem("autocomplete", "true")
       $("#autoCompletation").addClass("green")
       editorh.setOptions({
         enableBasicAutocompletion: true,
@@ -90,9 +90,9 @@ $(document).ready(() => {
         enableSnippets: true,
         enableLiveAutocompletion: true
       });
-    }else if(localStorage.getItem("autocomplete") == "true"){
-      $.notify("Disabled autoCompletation","error")
-      localStorage.setItem("autocomplete","false")
+    } else if (localStorage.getItem("autocomplete") == "true") {
+      $.notify("Disabled autoCompletation", "error")
+      localStorage.setItem("autocomplete", "false")
       $("#autoCompletation").addClass("red")
       editorh.setOptions({
         enableBasicAutocompletion: true,
@@ -109,9 +109,9 @@ $(document).ready(() => {
         enableSnippets: true,
         enableLiveAutocompletion: false
       });
-    }else{
-      $.notify("Disabled autoCompletation","error")
-      localStorage.setItem("autocomplete","false")
+    } else {
+      $.notify("Disabled autoCompletation", "error")
+      localStorage.setItem("autocomplete", "false")
       $("#autoCompletation").addClass("red")
       editorh.setOptions({
         enableBasicAutocompletion: true,
@@ -130,9 +130,9 @@ $(document).ready(() => {
       });
     }
   })
-  if(localStorage.getItem("autocomplete") != undefined){
-    if(localStorage.getItem("autocomplete") == "true" || localStorage.getItem("autocomplete") == undefined){
-     localStorage.setItem("autocomplete","true")
+  if (localStorage.getItem("autocomplete") != undefined) {
+    if (localStorage.getItem("autocomplete") == "true" || localStorage.getItem("autocomplete") == undefined) {
+      localStorage.setItem("autocomplete", "true")
       $("#autoCompletation").addClass("green")
       editorh.setOptions({
         enableBasicAutocompletion: true,
@@ -149,9 +149,9 @@ $(document).ready(() => {
         enableSnippets: true,
         enableLiveAutocompletion: true
       });
-    }else if(localStorage.getItem("autocomplete") == "false"){
-      localStorage.setItem("autocomplete","false")
-      $("#autoCompletation").css("background","red")
+    } else if (localStorage.getItem("autocomplete") == "false") {
+      localStorage.setItem("autocomplete", "false")
+      $("#autoCompletation").css("background", "red")
       editorh.setOptions({
         enableBasicAutocompletion: true,
         enableSnippets: true,
@@ -167,24 +167,24 @@ $(document).ready(() => {
         enableSnippets: true,
         enableLiveAutocompletion: false
       });
-  }
-  }else{
-    $("#autoCompletation").css("background","green")
-      editorh.setOptions({
-        enableBasicAutocompletion: true,
-        enableSnippets: true,
-        enableLiveAutocompletion: true
-      });
-      editorj.setOptions({
-        enableBasicAutocompletion: true,
-        enableSnippets: true,
-        enableLiveAutocompletion: true
-      });
-      editorc.setOptions({
-        enableBasicAutocompletion: true,
-        enableSnippets: true,
-        enableLiveAutocompletion: true
-      });
+    }
+  } else {
+    $("#autoCompletation").css("background", "green")
+    editorh.setOptions({
+      enableBasicAutocompletion: true,
+      enableSnippets: true,
+      enableLiveAutocompletion: true
+    });
+    editorj.setOptions({
+      enableBasicAutocompletion: true,
+      enableSnippets: true,
+      enableLiveAutocompletion: true
+    });
+    editorc.setOptions({
+      enableBasicAutocompletion: true,
+      enableSnippets: true,
+      enableLiveAutocompletion: true
+    });
   }
   editorh.setReadOnly(false)
   editorc.setReadOnly(false)
@@ -228,20 +228,20 @@ $(document).ready(() => {
     editorj.focus()
   })
   //FORMATTING CODE
-  function format(){
-    if(mode = "html"){
+  function format() {
+    if (mode = "html") {
       let codetf = html_beautify(editorh.getValue())
-      editorh.setValue(codetf,-1)
-    }else if(mode = "css"){
+      editorh.setValue(codetf, -1)
+    } else if (mode = "css") {
       let codetf = css_beautify(editorc.getValue())
-      editorc.setValue(codetf,-1)
-    }else if(mode = "js"){
+      editorc.setValue(codetf, -1)
+    } else if (mode = "js") {
       let codetf = js_beautify(editorj.getValue())
-      editorj.setValue(codetf,-1)
-    }else{
-      $.notify("Unknown Error : No file is opened..","error")
+      editorj.setValue(codetf, -1)
+    } else {
+      $.notify("Unknown Error : No file is opened..", "error")
     }
-    $.notify("formatted","success")
+    $.notify("formatted", "success")
   }
   //Saving system
   setInterval(() => {
@@ -253,15 +253,15 @@ $(document).ready(() => {
   let runButton = document.createElement("button")
   runButton.className = "material-icons btn right grey darken-2 waves-effect"
   runButton.innerText = "play_arrow"
-  runButton.onclick = ()=>{
-    window.open(location.href+"/run")
+  runButton.onclick = () => {
+    window.open(location.href + "/run")
   }
   runButton.title = "Run this project"
   $("#info").append(runButton)
   let formatButton = document.createElement("button")
   formatButton.className = "material-icons btn right grey darken-1 waves-effect"
   formatButton.innerText = "line_style"
-  formatButton.onclick = ()=>{
+  formatButton.onclick = () => {
     format()
   }
   formatButton.title = "format The active file"
@@ -270,153 +270,209 @@ $(document).ready(() => {
   buildButton.className = "material-icons btn right grey darken-1 waves-effect"
   buildButton.title = "Export or download as html or others"
   buildButton.innerText = "build"
-  buildButton.onclick = ()=>{
-    var blob = new Blob(["Hello, world!"], {type: "text/plain;charset=utf-8"});
+  buildButton.onclick = () => {
+    var blob = new Blob(["Hello, world!"], { type: "text/plain;charset=utf-8" });
     FileSaver.saveAs(blob, "hello world.txt");
   }
   $("#info").sortable()
   $("#info").append(buildButton)
-  if(localStorage.getItem("useSass") !=""){
+  if (localStorage.getItem("useSass") != "") {
     $("#css").text("style.sass [SASS Preprocessor]")
   }
-  $("#useSass").click(()=>{
-    if(localStorage.getItem("useSass") == ""){
-    $("#css").text("style.sass [SASS Preprocessor]")
-    localStorage.setItem("useSass",`<script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.12/sass.sync.min.js" ansyc defer crossorigin='anonymous'></script>`)
-    editorc.session.setMode("ace/mode/sass")
-    $.notify("Installed SASS sucessfully","success")
-    }else if(localStorage.getItem("useSass") == `<script ansyc crossorigin defer src="https://cdn.jsdelivr.net/npm/less@3.9.0/dist/less.min.js" ></script>`){
+  $("#useSass").click(() => {
+    if (localStorage.getItem("useSass") == "") {
       $("#css").text("style.sass [SASS Preprocessor]")
-    localStorage.setItem("useSass",`<script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.12/sass.sync.min.js" ansyc defer crossorigin='anonymous'></script>`)
-    editorc.session.setMode("ace/mode/sass")
-      $.notify("Uninstalled SASS Successfully!","error")
-      $.notify("Installed Less sucessfully!","success")
-    }else{
+      localStorage.setItem("useSass", `<script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.12/sass.sync.min.js" ansyc defer crossorigin='anonymous'></script>`)
+      editorc.session.setMode("ace/mode/sass")
+      $.notify("Installed SASS sucessfully", "success")
+    } else if (localStorage.getItem("useSass") == `<script ansyc crossorigin defer src="https://cdn.jsdelivr.net/npm/less@3.9.0/dist/less.min.js" ></script>`) {
+      $("#css").text("style.sass [SASS Preprocessor]")
+      localStorage.setItem("useSass", `<script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.12/sass.sync.min.js" ansyc defer crossorigin='anonymous'></script>`)
+      editorc.session.setMode("ace/mode/sass")
+      $.notify("Uninstalled SASS Successfully!", "error")
+      $.notify("Installed Less sucessfully!", "success")
+    } else {
       $("#css").text("style.css")
       editorc.session.setMode("ace/mode/css")
-      localStorage.setItem("useSass",``)
-      $.notify("Uninstalled SASS","error")
+      localStorage.setItem("useSass", ``)
+      $.notify("Uninstalled SASS", "error")
     }
   })
-  $("#useLess").click(()=>{
-    if(localStorage.getItem("useSass") == ""){
-    $("#css").text("style.less [Less Preprocessor]")
-    localStorage.setItem("useSass",`<script ansyc crossorigin defer src="https://cdn.jsdelivr.net/npm/less@3.9.0/dist/less.min.js" ></script>`)
-    editorc.session.setMode("ace/mode/less")
-    $.notify("Installed Less sucessfully","success")
-    }else if(localStorage.getItem("useSass") == `<script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.12/sass.sync.min.js" ansyc defer crossorigin='anonymous'></script>`){
+  $("#useLess").click(() => {
+    if (localStorage.getItem("useSass") == "") {
+      $("#css").text("style.less [Less Preprocessor]")
+      localStorage.setItem("useSass", `<script ansyc crossorigin defer src="https://cdn.jsdelivr.net/npm/less@3.9.0/dist/less.min.js" ></script>`)
+      editorc.session.setMode("ace/mode/less")
+      $.notify("Installed Less sucessfully", "success")
+    } else if (localStorage.getItem("useSass") == `<script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.12/sass.sync.min.js" ansyc defer crossorigin='anonymous'></script>`) {
       $("#css").text("style.less [Less Preprocessor]")
       editorc.session.setMode("ace/mode/less")
-      localStorage.setItem("useSass",`<script ansyc crossorigin defer src="https://cdn.jsdelivr.net/npm/less@3.9.0/dist/less.min.js" ></script>`)
-      $.notify("Uninstalled SASS","error")
-      $.notify("Installed Less sucessfully","success")
-    }else{
+      localStorage.setItem("useSass", `<script ansyc crossorigin defer src="https://cdn.jsdelivr.net/npm/less@3.9.0/dist/less.min.js" ></script>`)
+      $.notify("Uninstalled SASS", "error")
+      $.notify("Installed Less sucessfully", "success")
+    } else {
       $("#css").text("style.css")
-      localStorage.setItem("useSass",``)
+      localStorage.setItem("useSass", ``)
       editorc.session.setMode("ace/mode/css")
-      $.notify("UnInstalled Less sucessfully","error")
+      $.notify("UnInstalled Less sucessfully", "error")
     }
   })
-  if(localStorage.getItem("useSass") !=""){
+  if (localStorage.getItem("useSass") != "") {
     $("#css").text("style.sass [SASS Preprocessor]")
   }
-  $("#useBabel").on("click",()=>{
-      if(localStorage.getItem("isBabel") == undefined || localStorage.getItem("isBabel") == "type='module'"){
+  $("#useBabel").on("click", () => {
+    if (localStorage.getItem("isBabel") == undefined || localStorage.getItem("isBabel") == "type='module'") {
       $("#js").text("main.jsx [React]")
-      localStorage.setItem("useBabel",`<script defer crossorigin="anonymous" src="https://unpkg.com/react@17/umd/react.production.min.js" ansyc></script>
+      localStorage.setItem("useBabel", `<script defer crossorigin="anonymous" src="https://unpkg.com/react@17/umd/react.production.min.js" ansyc></script>
     <script ansyc crossorigin="anonymous" defer src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script><script src="https://unpkg.com/@babel/standalone/babel.min.js" defer ansyc></script>`)
-    localStorage.setItem("isBabel","type='text/jsx'")
-    editorj.session.setMode("ace/mode/jsx")
-    $.notify("React Installed and enabled","success")
-      }else if(localStorage.getItem("isBabel") == "type='text/javascript'"){
+      localStorage.setItem("isBabel", "type='text/jsx'")
+      editorj.session.setMode("ace/mode/jsx")
+      $.notify("React Installed and enabled", "success")
+    } else if (localStorage.getItem("isBabel") == "type='text/babel'") {
       $("#js").text("main.jsx [React]")
       $("#html").text("index.html")
       $("#css").text("style.css")
-      localStorage.setItem("useBabel",`<script defer crossorigin="anonymous" src="https://unpkg.com/react@17/umd/react.production.min.js" ansyc></script>
+      localStorage.setItem("useBabel", `<script defer crossorigin="anonymous" src="https://unpkg.com/react@17/umd/react.production.min.js" ansyc></script>
     <script ansyc crossorigin="anonymous" defer src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script><script src="https://unpkg.com/@babel/standalone/babel.min.js" defer ansyc></script>`)
-    localStorage.setItem("isBabel","type='text/jsx'")
-    editorj.session.setMode("ace/mode/jsx")
-    $.notify("React Installed and enabled","success")
-    if(localStorage.getItem("useSass") !=""){
-    $("#css").text("style.sass [SASS Preprocessor]")
-  }
-    }else if(localStorage.getItem("isBabel") == "type='text/javascript'"){
+      localStorage.setItem("isBabel", "type='text/jsx'")
+      editorj.session.setMode("ace/mode/jsx")
+      $.notify("React Installed and enabled", "success")
+      $.notify("Vuejs Installed and enabled", "error")
+      if (localStorage.getItem("useSass") != "") {
+        $("#css").text("style.sass [SASS Preprocessor]")
+      }
+    } else if (localStorage.getItem("isBabel") == "type='text/javascript'") {
       $("#js").text("main.jsx [React]")
       $("#html").text("index.html")
       $("#css").text("style.css")
-      localStorage.setItem("useBabel",`<script defer crossorigin="anonymous" src="https://unpkg.com/react@17/umd/react.production.min.js" ansyc></script>
+      localStorage.setItem("useBabel", `<script defer crossorigin="anonymous" src="https://unpkg.com/react@17/umd/react.production.min.js" ansyc></script>
     <script ansyc crossorigin="anonymous" defer src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script><script src="https://unpkg.com/@babel/standalone/babel.min.js" defer ansyc></script>`)
-    localStorage.setItem("isBabel","type='text/jsx'")
-    editorj.session.setMode("ace/mode/jsx")
-    $.notify("React Installed and enabled","success")
-    $.notify("Uninstalled Angular while installing React","error")
-    
-        }else{
-        $("#js").text("main.js")
-        localStorage.setItem("isBabel","type='module'")
-        localStorage.setItem("useBabel",``)
+      localStorage.setItem("isBabel", "type='text/jsx'")
+      editorj.session.setMode("ace/mode/jsx")
+      $.notify("React Installed and enabled", "success")
+      $.notify("Uninstalled Angular while installing React", "error")
+
+    } else {
+      $("#js").text("main.js")
+      localStorage.setItem("isBabel", "type='module'")
+      localStorage.setItem("useBabel", ``)
+      editorj.session.setMode("ace/mode/javascript")
+      $.notify("React Uninstalled Sucessfully", "error")
+      if (localStorage.getItem("useSass") != "") {
+        $("#css").text("style.sass [SASS Preprocessor]")
+      }
+    }
+  })
+  //USE VUE
+  $("#useVue").on("click", () => {
+    if (localStorage.getItem("isBabel") == undefined || localStorage.getItem("isBabel") == "type='module'") {
+      $("#js").text("main.js [Vue JS]")
+      $("#html").text("index.html")
+      $("#css").text("style.css")
+      localStorage.setItem("useBabel", `<script ansyc defer crossorigin src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>`)
+      editorj.session.setMode("ace/mode/javascript")
+      $.notify("Vuejs Installed and enabled", "success")
+    } else if (localStorage.getItem("isBabel") == "type='text/javascript'") {
+      if (localStorage.getItem("isBabel") == undefined || localStorage.getItem("isBabel") == "type='module'") {
+        $("#js").text("main.js [Vue JS]")
+        $("#html").text("index.html")
+        $("#css").text("style.css")
+        localStorage.setItem("useBabel", `<script ansyc defer crossorigin src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>`)
         editorj.session.setMode("ace/mode/javascript")
-        $.notify("React Uninstalled Sucessfully","error")
-        if(localStorage.getItem("useSass") !=""){
-    $("#css").text("style.sass [SASS Preprocessor]")
-  }
+        localStorage.setItem("isBabel", "type='text/babel'")
+        $.notify("Vuejs Installed and enabled", "success")
+        $.notify("AngularJS Uninstalled", "error")
+        if (localStorage.getItem("useSass") != "") {
+          $("#css").text("style.sass [SASS Preprocessor]")
+        }
+      } else if (localStorage.getItem("isBabel") == "type='text/babel'") {
+        $("#js").text("main.js")
+        $("#html").text("index.html")
+        $("#css").text("style.css")
+        localStorage.setItem("useBabel", ``)
+        localStorage.setItem("isBabel", "type='module'")
+        $.notify("vUEJS uNINSTALLED", "success")
+      } else {
+        $("#js").text("main.js [Vue JS]")
+        $("#html").text("index.html")
+        $("#css").text("style.css")
+        $("#js").text("main.js")
+        localStorage.setItem("isBabel", "type='text/babel'")
+        localStorage.setItem("useBabel", `<script ansyc defer crossorigin src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>`)
+        editorj.session.setMode("ace/mode/javascript")
+        $.notify("AngularJS Uninstalled Sucessfully", "error")
+        $.notify("Installed VueJS sucessfully")
+        if (localStorage.getItem("useSass") != "") {
+          $("#css").text("style.sass [SASS Preprocessor]")
+        }
       }
     })
-    if(localStorage.getItem("useSass") !=""){
+  //USe vue end
+  if (localStorage.getItem("useSass") != "") {
     $("#css").text("style.sass [SASS Preprocessor]")
   }
-    if(localStorage.getItem("isBabel") == "type='module'"){
+  if (localStorage.getItem("isBabel") == "type='module'") {
+    $("#js").text("main.js")
+    $("#css").text("style.css")
+    $("#html").text("index.html")
+
+    if (localStorage.getItem("useSass") != "") {
+      $("#css").text("style.sass [SASS Preprocessor]")
+    }
+  } else if (localStorage.getItem("isBabel") == "type='text/jsx'") {
+    $("#js").text("main.jsx [ReactJS]")
+    editorj.session.setMode("ace/mode/jsx")
+    $("#css").text("style.css")
+    $("#html").text("index.html")
+    if (localStorage.getItem("useSass") != "") {
+      $("#css").text("style.sass [SASS Preprocessor]")
+    }
+  } else if (localStorage.getItem("isBabel") == "type='text/javascript'") {
+    $("#js").text("main.component.js [AngularJS]")
+    if (localStorage.getItem("useSass") != "") {
+      $("#css").text("style.sass [SASS Preprocessor]")
+    }
+  }
+  $("#useAngular").click(() => {
+    if (localStorage.getItem("isBabel") == "type='module'") {
+      $("#js").text("main.component.js [AngularJS]")
+      localStorage.setItem("useBabel", `<script src="https://unpkg.com/@babel/standalone/babel.min.js" defer ansyc></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js" crossorigin='anonymous' ansyc defer></script>`)
+      localStorage.setItem("isBabel", "type='text/javascript'")
+      $.notify("Installed AngularJS Sucessfully", "success")
+      if (localStorage.getItem("useSass") != "") {
+        $("#css").text("style.sass [SASS Preprocessor]")
+      }
+    } else if (localStorage.getItem("isBabel") == "type='text/jsx'") {
+      $("#js").text("main.component.js [AngularJS]")
+      localStorage.setItem("useBabel", `<script src="https://unpkg.com/@babel/standalone/babel.min.js" defer ansyc></script><script crossorigin='anonymous' src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js" ansyc defer></script>`)
+      localStorage.setItem("isBabel", "type='text/javascript'")
+      $.notify("Installed AngularJS Sucessfully", "success")
+      $.notify("React Uninstalled Sucessfully", "error")
+      if (localStorage.getItem("useSass") != "") {
+        $("#css").text("style.sass [SASS Preprocessor]")
+      }
+    }
+    else if (localStorage.getItem("isBabel") == "type='text/babel'") {
+      $("#js").text("main.component.js [AngularJS]")
+      localStorage.setItem("useBabel", `<script src="https://unpkg.com/@babel/standalone/babel.min.js" defer ansyc></script><script crossorigin='anonymous' src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js" ansyc defer></script>`)
+      localStorage.setItem("isBabel", "type='text/javascript'")
+      $.notify("Installed AngularJS Sucessfully", "success")
+      $.notify("VueJS Uninstalled Sucessfully", "error")
+      if (localStorage.getItem("useSass") != "") {
+        $("#css").text("style.sass [SASS Preprocessor]")
+      }
+    } else {
       $("#js").text("main.js")
       $("#css").text("style.css")
       $("#html").text("index.html")
-      
-      if(localStorage.getItem("useSass") !=""){
-    $("#css").text("style.sass [SASS Preprocessor]")
-  }
-    }else if(localStorage.getItem("isBabel") == "type='text/jsx'"){
-      $("#js").text("main.jsx [ReactJS]")
-      editorj.session.setMode("ace/mode/jsx")
-      $("#css").text("style.css")
-      $("#html").text("index.html")
-      if(localStorage.getItem("useSass") !=""){
-    $("#css").text("style.sass [SASS Preprocessor]")
-  }
-    }else if(localStorage.getItem("isBabel") == "type='text/javascript'"){
-      $("#js").text("main.component.js [AngularJS]")
-      if(localStorage.getItem("useSass") !=""){
-    $("#css").text("style.sass [SASS Preprocessor]")
-  }
-    }
-    $("#useAngular").click(()=>{
-      if(localStorage.getItem("isBabel") == "type='module'"){
-        $("#js").text("main.component.js [AngularJS]")
-        localStorage.setItem("useBabel",`<script src="https://unpkg.com/@babel/standalone/babel.min.js" defer ansyc></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js" crossorigin='anonymous' ansyc defer></script>`)
-        localStorage.setItem("isBabel","type='text/javascript'")
-        $.notify("Installed AngularJS Sucessfully","success")
-        if(localStorage.getItem("useSass") !=""){
-    $("#css").text("style.sass [SASS Preprocessor]")
-  }
-      }else if(localStorage.getItem("isBabel") == "type='text/jsx'"){
-        $("#js").text("main.component.js [AngularJS]")
-        localStorage.setItem("useBabel",`<script src="https://unpkg.com/@babel/standalone/babel.min.js" defer ansyc></script><script crossorigin='anonymous' src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js" ansyc defer></script>`)
-        localStorage.setItem("isBabel","type='text/javascript'")
-        $.notify("Installed AngularJS Sucessfully","success")
-        $.notify("React Uninstalled Sucessfully","error")
-        if(localStorage.getItem("useSass") !=""){
-    $("#css").text("style.sass [SASS Preprocessor]")
-  }
-      }else{
-        $("#js").text("main.js")
-        $("#css").text("style.css")
-        $("#html").text("index.html")
-        localStorage.setItem("useBabel",``)
-        localStorage.setItem("isBabel","type='module'")
-        $.notify("Uninstalled AngularJS","error")
-        if(localStorage.getItem("useSass") !=""){
-    $("#css").text("style.sass [SASS Preprocessor]")
-  }
+      localStorage.setItem("useBabel", ``)
+      localStorage.setItem("isBabel", "type='module'")
+      $.notify("Uninstalled AngularJS", "error")
+      if (localStorage.getItem("useSass") != "") {
+        $("#css").text("style.sass [SASS Preprocessor]")
       }
-    })
+    }
+  })
 })
 function preventBehavior(e) {
   e.preventDefault();
@@ -440,16 +496,16 @@ window.addEventListener('beforeinstallprompt', (e) => {
     deferredPrompt.prompt();
     // Wait for the user to respond to the prompt
     deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-          console.log('User accepted the A2HS prompt');
-        } else {
-          console.log('User dismissed the A2HS prompt');
-        }
-        deferredPrompt = null;
-      });
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the A2HS prompt');
+      } else {
+        console.log('User dismissed the A2HS prompt');
+      }
+      deferredPrompt = null;
+    });
   });
 });
-setTimeout(()=>{
+setTimeout(() => {
   show = 'none'
   addBtn.style.display = "none"
-},7500)
+}, 7500)
