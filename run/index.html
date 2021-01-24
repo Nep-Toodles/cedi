@@ -36,7 +36,7 @@
     }else{
       var scass = "type='text/css'"
     }
-    document.body.innerHTML =localStorage.getItem("html")+"<style "+scass+">"+localStorage.getItem("css")+"</style>"+"<script ansyc  crossorigin='anonymous'"+localStorage.getItem("isBabel")+">"+localStorage.getItem("js")+"</"+"scri" + "pt>"+localStorage.getItem("useBabel")+localStorage.getItem("useSass")
+    document.write(localStorage.getItem("html")+"<style "+scass+">"+localStorage.getItem("css")+"</style>"+"<script ansyc  crossorigin='anonymous'"+localStorage.getItem("isBabel")+">"+localStorage.getItem("js")+"</"+"scri" + "pt>"+localStorage.getItem("useBabel")+localStorage.getItem("useSass"))
     }
 	</script>
 </body>
