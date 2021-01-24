@@ -328,7 +328,7 @@ $(document).ready(() => {
       localStorage.setItem("isBabel", "type='text/jsx'")
       editorj.session.setMode("ace/mode/jsx")
       $.notify("React Installed and enabled", "success")
-    } else if (localStorage.getItem("isBabel") == "type='javascript'") {
+    } else if (localStorage.getItem("isBabel") == "type='application/javascript'") {
       $("#js").text("main.jsx [React]")
       $("#html").text("index.html")
       $("#css").text("style.css")
@@ -379,7 +379,7 @@ $(document).ready(() => {
         $("#css").text("style.css")
         localStorage.setItem("useBabel", `<script ansyc defer crossorigin src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>`)
         editorj.session.setMode("ace/mode/javascript")
-        localStorage.setItem("isBabel", "type='javascript'")
+        localStorage.setItem("isBabel", "type='application/javascript'")
         $.notify("Vuejs Installed and enabled", "success")
         $.notify("AngularJS Uninstalled", "error")
         if (localStorage.getItem("useSass") != "") {
@@ -398,7 +398,7 @@ $(document).ready(() => {
         $("#html").text("index.html")
         $("#css").text("style.css")
         $("#js").text("main.js")
-        localStorage.setItem("isBabel", "type='javascript'")
+        localStorage.setItem("isBabel", "type='application/javascript'")
         localStorage.setItem("useBabel", `<script ansyc defer crossorigin src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>`)
         editorj.session.setMode("ace/mode/javascript")
         $.notify("AngularJS Uninstalled Sucessfully", "error")
@@ -453,7 +453,7 @@ $(document).ready(() => {
         $("#css").text("style.sass [SASS Preprocessor]")
       }
     }
-    else if (localStorage.getItem("isBabel") == "type='javascript'") {
+    else if (localStorage.getItem("isBabel") == "type='application/javascript'") {
       $("#js").text("main.component.js [AngularJS]")
       localStorage.setItem("useBabel", `<script src="https://unpkg.com/@babel/standalone/babel.min.js" defer ansyc></script><script crossorigin='anonymous' src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js" ansyc defer></script>`)
       localStorage.setItem("isBabel", "type='text/javascript'")
