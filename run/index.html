@@ -39,10 +39,9 @@
       var scass = "type='text/css'"
     }
     
-    let ww = window.open("","_top")
-    ww.document.open()
-    ww.document.write(localStorage.getItem("html")+"<style "+scass+">"+localStorage.getItem("css")+"</style>"+"<script ansyc  crossorigin='anonymous'"+localStorage.getItem("isBabel")+">"+localStorage.getItem("js")+"</"+"scri" + "pt>"+localStorage.getItem("useBabel")+localStorage.getItem("useSass"))
-    ww.document.close()
+    document.open()
+    document.write(localStorage.getItem("html")+"<style "+scass+">"+localStorage.getItem("css")+"</style>"+"<script ansyc  crossorigin='anonymous'"+localStorage.getItem("isBabel")+">"+localStorage.getItem("js")+"</"+"scri" + "pt>"+localStorage.getItem("useBabel")+localStorage.getItem("useSass"))
+    document.close()
     }
 	</script>
 </body>
