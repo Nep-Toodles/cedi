@@ -282,12 +282,12 @@ $(document).ready(() => {
   $("#useSass").click(()=>{
     if(localStorage.getItem("useSass") == ""){
     $("#css").text("style.sass [SASS Preprocessor]")
-    localStorage.setItem("useSass",`<script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.12/sass.sync.min.js" ansyc defer crossorigin='anonymous'></script>`)
+    localStorage.setItem("useSass",`<script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.12/sass.sync.min.js"   crossorigin='anonymous'></script>`)
     editorc.session.setMode("ace/mode/sass")
     $.notify("Installed SASS sucessfully","success")
-    }else if(localStorage.getItem("useSass") == `<script ansyc crossorigin defer src="https://cdn.jsdelivr.net/npm/less@3.9.0/dist/less.min.js" ></script>`){
+    }else if(localStorage.getItem("useSass") == `<script  crossorigin  src="https://cdn.jsdelivr.net/npm/less@3.9.0/dist/less.min.js" ></script>`){
       $("#css").text("style.sass [SASS Preprocessor]")
-    localStorage.setItem("useSass",`<script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.12/sass.sync.min.js" ansyc defer crossorigin='anonymous'></script>`)
+    localStorage.setItem("useSass",`<script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.12/sass.sync.min.js"   crossorigin='anonymous'></script>`)
     editorc.session.setMode("ace/mode/sass")
       $.notify("Uninstalled SASS Successfully!","error")
       $.notify("Installed Less sucessfully!","success")
@@ -301,13 +301,13 @@ $(document).ready(() => {
   $("#useLess").click(()=>{
     if(localStorage.getItem("useSass") == ""){
     $("#css").text("style.less [Less Preprocessor]")
-    localStorage.setItem("useSass",`<script ansyc crossorigin defer src="https://cdn.jsdelivr.net/npm/less@3.9.0/dist/less.min.js" ></script>`)
+    localStorage.setItem("useSass",`<script  crossorigin  src="https://cdn.jsdelivr.net/npm/less@3.9.0/dist/less.min.js" ></script>`)
     editorc.session.setMode("ace/mode/less")
     $.notify("Installed Less sucessfully","success")
-    }else if(localStorage.getItem("useSass") == `<script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.12/sass.sync.min.js" ansyc defer crossorigin='anonymous'></script>`){
+    }else if(localStorage.getItem("useSass") == `<script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.12/sass.sync.min.js"   crossorigin='anonymous'></script>`){
       $("#css").text("style.less [Less Preprocessor]")
       editorc.session.setMode("ace/mode/less")
-      localStorage.setItem("useSass",`<script ansyc crossorigin defer src="https://cdn.jsdelivr.net/npm/less@3.9.0/dist/less.min.js" ></script>`)
+      localStorage.setItem("useSass",`<script  crossorigin  src="https://cdn.jsdelivr.net/npm/less@3.9.0/dist/less.min.js" ></script>`)
       $.notify("Uninstalled SASS","error")
       $.notify("Installed Less sucessfully","success")
     }else{
@@ -323,8 +323,8 @@ $(document).ready(() => {
   $("#useBabel").on("click",()=>{
       if(localStorage.getItem("isBabel") == undefined || localStorage.getItem("isBabel") == "type='module'"){
       $("#js").text("main.jsx [React]")
-      localStorage.setItem("useBabel",`<script defer crossorigin="anonymous" src="https://unpkg.com/react@17/umd/react.production.min.js" ansyc></script>
-    <script ansyc crossorigin="anonymous" defer src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script><script src="https://unpkg.com/@babel/standalone/babel.min.js" defer ansyc></script>`)
+      localStorage.setItem("useBabel",`<script  crossorigin="anonymous" src="https://unpkg.com/react@17/umd/react.production.min.js" ></script>
+    <script  crossorigin="anonymous"  src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script><script src="https://unpkg.com/@babel/standalone/babel.min.js"  ></script>`)
     localStorage.setItem("isBabel","type='text/jsx'")
     editorj.session.setMode("ace/mode/jsx")
     $.notify("React Installed and enabled","success")
@@ -332,8 +332,8 @@ $(document).ready(() => {
       $("#js").text("main.jsx [React]")
       $("#html").text("index.html")
       $("#css").text("style.css")
-      localStorage.setItem("useBabel",`<script defer crossorigin="anonymous" src="https://unpkg.com/react@17/umd/react.production.min.js" ansyc></script>
-    <script ansyc crossorigin="anonymous" defer src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script><script src="https://unpkg.com/@babel/standalone/babel.min.js" defer ansyc></script>`)
+      localStorage.setItem("useBabel",`<script  crossorigin="anonymous" src="https://unpkg.com/react@17/umd/react.production.min.js" ></script>
+    <script  crossorigin="anonymous"  src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script><script src="https://unpkg.com/@babel/standalone/babel.min.js"  ></script>`)
     localStorage.setItem("isBabel","type='text/jsx'")
     editorj.session.setMode("ace/mode/jsx")
     $.notify("React Installed and enabled","success")
@@ -344,8 +344,8 @@ $(document).ready(() => {
       $("#js").text("main.jsx [React]")
       $("#html").text("index.html")
       $("#css").text("style.css")
-      localStorage.setItem("useBabel",`<script defer crossorigin="anonymous" src="https://unpkg.com/react@17/umd/react.production.min.js" ansyc></script>
-    <script ansyc crossorigin="anonymous" defer src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script><script src="https://unpkg.com/@babel/standalone/babel.min.js" defer ansyc></script>`)
+      localStorage.setItem("useBabel",`<script  crossorigin="anonymous" src="https://unpkg.com/react@17/umd/react.production.min.js" ></script>
+    <script  crossorigin="anonymous"  src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script><script src="https://unpkg.com/@babel/standalone/babel.min.js"  ></script>`)
     localStorage.setItem("isBabel","type='text/jsx'")
     editorj.session.setMode("ace/mode/jsx")
     $.notify("React Installed and enabled","success")
@@ -390,7 +390,7 @@ $(document).ready(() => {
     $("#useAngular").click(()=>{
       if(localStorage.getItem("isBabel") == "type='module'"){
         $("#js").text("main.component.js [AngularJS]")
-        localStorage.setItem("useBabel",`<script src="https://unpkg.com/@babel/standalone/babel.min.js" defer ansyc></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js" crossorigin='anonymous' ansyc defer></script>`)
+        localStorage.setItem("useBabel",`<script src="https://unpkg.com/@babel/standalone/babel.min.js"  ></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js" crossorigin='anonymous'  ></script>`)
         localStorage.setItem("isBabel","type='text/javascript'")
         $.notify("Installed AngularJS Sucessfully","success")
         if(localStorage.getItem("useSass") !=""){
@@ -398,7 +398,7 @@ $(document).ready(() => {
   }
       }else if(localStorage.getItem("isBabel") == "type='text/jsx'"){
         $("#js").text("main.component.js [AngularJS]")
-        localStorage.setItem("useBabel",`<script src="https://unpkg.com/@babel/standalone/babel.min.js" defer ansyc></script><script crossorigin='anonymous' src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js" ansyc defer></script>`)
+        localStorage.setItem("useBabel",`<script src="https://unpkg.com/@babel/standalone/babel.min.js"  ></script><script crossorigin='anonymous' src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"  ></script>`)
         localStorage.setItem("isBabel","type='text/javascript'")
         $.notify("Installed AngularJS Sucessfully","success")
         $.notify("React Uninstalled Sucessfully","error")
@@ -424,28 +424,28 @@ function preventBehavior(e) {
 document.addEventListener("touchmove", preventBehavior, { passive: false });
 window.oncontextmenu = (e) => e.preventDefault()
 let show = 'block'
-let deferredPrompt;
+let redPrompt;
 const addBtn = document.querySelector('.add-button');
 addBtn.style.display = 'none';
 window.addEventListener('beforeinstallprompt', (e) => {
   // Prevent Chrome 67 and earlier from automatically showing the prompt
   e.preventDefault();
   // Stash the event so it can be triggered later.
-  deferredPrompt = e;
+  redPrompt = e;
   // Update UI to notify the user they can add to home screen
   addBtn.style.display = show;
 
   addBtn.addEventListener('click', (e) => {
     addBtn.style.display = 'none';
-    deferredPrompt.prompt();
+    redPrompt.prompt();
     // Wait for the user to respond to the prompt
-    deferredPrompt.userChoice.then((choiceResult) => {
+    redPrompt.userChoice.then((choiceResult) => {
         if (choiceResult.outcome === 'accepted') {
           console.log('User accepted the A2HS prompt');
         } else {
           console.log('User dismissed the A2HS prompt');
         }
-        deferredPrompt = null;
+        redPrompt = null;
       });
   });
 });
