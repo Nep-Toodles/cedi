@@ -36,9 +36,12 @@
     }else{
       var scass = "type='text/css'"
     }
-    document.write(localStorage.getItem("html")+"<style "+scass+">"+localStorage.getItem("css")+"</style>"+"<script ansyc  crossorigin='anonymous'"+localStorage.getItem("isBabel")+">"+localStorage.getItem("js")+"</"+"scri" + "pt>"+localStorage.getItem("useBabel")+localStorage.getItem("useSass"))
+    document.getElementById("iframe").srcdoc = localStorage.getItem("html")+"<style "+scass+">"+localStorage.getItem("css")+"</style>"+"<script ansyc  crossorigin='anonymous'"+localStorage.getItem("isBabel")+">"+localStorage.getItem("js")+"</"+"scri" + "pt>"+localStorage.getItem("useBabel")+localStorage.getItem("useSass")
     }
 	</script>
+<iframe frameborder="0" id="iframe" style="width:100%;height:100%;overflow:hidden;">
+
+</iframe>
 </body>
 
 </html>
